@@ -1,0 +1,14 @@
+public class Evaluacion {
+    protected float calificacionTarea; 
+    protected float calificacionExamen;
+    protected float calificacionProyecto; 
+    public Evaluacion(float Tarea, float Examen, float Proyecto){
+        this.calificacionExamen=Examen;
+        this.calificacionProyecto=Proyecto;
+        this.calificacionTarea=Tarea;
+    }
+    public float CF(){
+        return (calificacionTarea+calificacionExamen+calificacionProyecto)/3;
+    }
+}
+    
