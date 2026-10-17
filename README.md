@@ -1,1 +1,1 @@
-# Pr-ctica-7
+# Práctica-7
