@@ -1,0 +1,19 @@
+package ej1P7 ;
+
+public class Alumno extends Evaluacion {
+    private String nombre;
+    private int semestre;
+    public Alumno(float Tarea, float Examen, float Proyecto, String nombre, int semestre){
+        super(Tarea, Examen, Proyecto);
+        this.nombre=nombre;
+        this.semestre=semestre;
+    }
+    public void mostrar(){
+        System.out.println("Nombre del alumno: " + nombre);
+        System.out.println("Semestre: " + semestre);
+        System.out.println("Calificación de la Tarea: " + calificacionTarea);
+        System.out.println("Calificación de Examen: " + calificacionExamen);
+        System.out.println("Calificación de Proyecto: " + calificacionProyecto);
+        System.out.println("Calificación Final: " + CF());
+    }
+}
