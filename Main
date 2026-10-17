@@ -1,0 +1,85 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner read = new Scanner(System.in);
+        ArrayList <Empleado> com = new ArrayList<>();
+        String nombre;
+        double salario, bono;
+        int ID, EXP, tareas, op;
+        System.out.println("Escoja a un empleado para ingresar su información");
+        System.out.println("1)Gerente");
+        System.out.println("2)Subgerente");
+        System.out.println("3)Piso");
+        System.out.println("-1)Salir");
+        op=read.nextInt();
+            do{
+                switch(op){
+                    case 1:
+                            System.out.println("Ingrese el nombre del empleado");
+                            nombre=read.next();
+                            System.out.println("Ingrese el ID");
+                            ID=read.nextInt();
+                            System.out.println("Ingrese la cantidad de tareas que tienen");
+                            tareas=read.nextInt();
+                            System.out.println("Ingrese el salario");
+                            salario=read.nextDouble();
+                            System.out.println("Ingrese bono (Si aplica)");
+                            bono=read.nextDouble();
+                            System.out.println("Ingrese tiempo en la empresa");
+                            EXP=read.nextInt();
+                            com.add(new Gerente(nombre, ID, tareas, salario, bono, EXP));
+                        break;
+                    case 2:
+                            System.out.println("Ingrese el nombre del empleado");
+                            nombre=read.next();
+                            System.out.println("Ingrese el ID");
+                            ID=read.nextInt();
+                            System.out.println("Ingrese la cantidad de tareas que tienen");
+                            tareas=read.nextInt();
+                            System.out.println("Ingrese el salario");
+                            salario=read.nextDouble();
+                            System.out.println("Ingrese bono (Si aplica)");
+                            bono=read.nextDouble();
+                            System.out.println("Ingrese tiempo en la empresa");
+                            EXP=read.nextInt();
+                            com.add(new Subgerente(nombre, ID, tareas, salario, bono, EXP));
+                            break;
+                    case 3:
+                            System.out.println("Ingrese el nombre del empleado");
+                            nombre=read.next();
+                            System.out.println("Ingrese el ID");
+                            ID=read.nextInt();
+                            System.out.println("Ingrese la cantidad de tareas que tienen");
+                            tareas=read.nextInt();
+                            System.out.println("Ingrese el salario");
+                            salario=read.nextDouble();
+                            System.out.println("Ingrese tiempo en la empresa");
+                            EXP=read.nextInt();
+                            com.add(new Piso(nombre, ID, tareas, salario, EXP));
+                            break;
+                    case -1:
+                        System.out.println("Saliendo, obteniendo la información ingresada");
+                        break;
+                    default:
+                        System.out.println("Opción inválida, ingrese otra");
+                        break;
+                }
+            System.out.println("¿Quiere ingresar la información de otro empleado?, 1) Gerente, 2) Subgerente, 3) Piso, -1");
+            op=read.nextInt();
+        }while(op!=-1);
+        if(com.isEmpty())
+        {
+            System.out.println("No se ingresó ningúna información");
+        }
+        else
+        {
+            for(Empleado emp : com)
+            {
+                System.out.println(emp.toString());
+            }
+        }
+        read.close();
+    }
+}
