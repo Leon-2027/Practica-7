@@ -1,0 +1,15 @@
+public class Piso extends Empleado{
+     private double salarioT;
+     protected int tareas;
+     
+     public Piso (String nombre, int ID, int tareas, double salario, int EXP){
+         super(nombre, ID, salario, EXP);
+         this.tareas=tareas;
+         this.salarioT=salario;
+     }
+     
+     @Override
+     public String toString(){
+         return super.toString() + " | Puesto: Piso " + " | Tareas: " + tareas + " | Salario Total: " + salarioT;
+     }
+}
