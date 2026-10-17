@@ -1,0 +1,17 @@
+public class Subgerente extends Empleado{
+     private double bono;
+     private double salarioT;
+     protected int tareas;
+     
+     public Subgerente (String nombre, int ID, int tareas, double salario, double bono, int EXP){
+         super(nombre, ID, salario, EXP);
+         this.bono=bono;
+         this.tareas=tareas;
+         this.salarioT+=salario + bono;
+     }
+     
+     @Override
+     public String toString(){
+         return super.toString() + " | Puesto: Subgerente " + " | Tareas: " + tareas + " | Bono: " + bono + " | Salario Total: " + salarioT;
+     }
+}
