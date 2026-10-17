@@ -1,0 +1,27 @@
+package ej1P7 ;
+
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        String nombre;
+        int semestre;
+        float Tarea, Examen, Proyecto;
+        System.out.println("Ingrese el nombre del alumno");
+        nombre=read.next();
+        System.out.println("Semestre del alumno");
+        semestre=read.nextInt();
+        System.out.println("Ingrese calificación de la tarea");
+        Tarea=read.nextFloat();
+        System.out.println("Ingrese calificación del examen");
+        Examen=read.nextFloat();
+        System.out.println("Ingrese calificación del proyecto");
+        Proyecto=read.nextFloat();
+        Alumno alu = new Alumno(Tarea, Examen, Proyecto, nombre, semestre);
+        alu.mostrar();
+        read.close();
+    }
+    
+}
